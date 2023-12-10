@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListCode{
+    public static void main(String[] args) {
+
+        List<Integer> integerList = new ArrayList<>();
+
+        integerList.add(50);
+        integerList.add(100);
+        integerList.add(150);
+
+        System.out.println("Elements of the integerList:");
+        for (int i : integerList) {
+            System.out.println(i);
+        }
+
+        List<String> stringList = new ArrayList<>();
+
+        stringList.add("Mary");
+        stringList.add("Rechelle");
+        stringList.add("De Guzman");
+
+        System.out.println("\nElements of the stringList:");
+        for (String s : stringList) {
+            System.out.println(s);
+        }
+    }
+}
