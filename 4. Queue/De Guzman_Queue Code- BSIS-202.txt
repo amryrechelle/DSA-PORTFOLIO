@@ -1,0 +1,56 @@
+Mary Rechelle De Guzman
+BSIS 202
+
+
+MODULE 6 - QUEUE APPLICATIONS LAB ACTVITY
+Code:
+import java.util.Scanner;
+
+public class CaesarCipher {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+     
+        System.out.print("Enter Cleartext: ");
+        String plaintext = scanner.nextLine();
+
+     
+        System.out.print("Enter the value of k: ");
+        int k = scanner.nextInt();
+
+     
+        String ciphertext = encrypt(plaintext, k);
+
+       
+        System.out.println("Ciphertext: " + ciphertext);
+
+        scanner.close();
+    }
+
+    private static String encrypt(String Cleartext, int k) {
+        StringBuilder ciphertext = new StringBuilder();
+
+        for (int i = 0; i < Cleartext.length(); i++) {
+            char currentChar = Cleartext.charAt(i);
+
+            if (Character.isUpperCase(currentChar)) {
+                char encryptedChar = (char) ((currentChar + k - 'A') % 26 + 'A');
+                ciphertext.append(encryptedChar);
+            }
+            
+            else if (Character.isLowerCase(currentChar)) {
+                char encryptedChar = (char) ((currentChar + k - 'a') % 26 + 'a');
+                ciphertext.append(encryptedChar);
+            }
+          
+            else {
+                ciphertext.append(currentChar);
+            }
+        }
+
+        return ciphertext.toString();
+    }
+}
+
+
